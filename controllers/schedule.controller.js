@@ -42,7 +42,7 @@ exports.showData = async(req,res)=>{
 exports.DeleteData = async(req,res)=>{
     const { Depature } = req.body;
     try{
-        await Schedule.deleteOne({Depature:Depature});
+        await Schedule.deleteMany({Depature:Depature});
         res.status(200).json({
             message: "Record Deleted!"
         })
